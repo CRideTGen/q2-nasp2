@@ -1,0 +1,1 @@
+from q2_types.bowtie2 import Bowtie2Index
