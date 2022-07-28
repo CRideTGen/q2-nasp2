@@ -8,5 +8,9 @@ setup(
     license='Apache-2.0',
     author='Chase Ridenour',
     author_email='cridenour@tgen.org',
-    description=''
+    description='',
+    entrypoints ={
+        'qiime2.plugins': ['q2-readmappers=q2_read_mappers.plugin_setup:plugin']
+                  },
+    zip_safe=False,
 )

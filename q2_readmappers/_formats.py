@@ -1,9 +1,4 @@
-from qiime2.plugin import SemanticType, model
-from plugin_setup import plugin
-
-BWAIndex = SemanticType('BWAIndex')
-
-
+from qiime2.plugin import model
 
 class BWAIndexFileFormat(model.BinaryFileFormat):
     def _validate(self, level):
@@ -15,10 +10,3 @@ class BWAIndexDirFmt(model.DirectoryFormat):
     bwt = model.File(r'.+\.3\.bt2l?', format=BWAIndexFileFormat)
     pac = model.File(r'.+\.4\.bt2l?', format=BWAIndexFileFormat)
     sa = model.File(r'.+\.rev\.1\.bt2l?', format=BWAIndexFileFormat)
-
-
-plugin.register_semantic_types(BWAIndex)
-plugin.register_semantic_type_to_format(BWAIndex, BWAIndexDirFmt)
-
-#TODO add citations
-plugin.register_views()

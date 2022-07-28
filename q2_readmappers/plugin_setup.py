@@ -15,8 +15,11 @@
 import importlib
 
 from q2_types.feature_data import FeatureData, Sequence
+from qiime2.core.type import Int, Range
 from qiime2.plugin import Plugin, Str
 from actions.paired_end_align import paired_end_align
+from actions.reference_index import bwa_build
+from q2_readmappers._types import BWAIndex
 
 plugin = Plugin(name='samtools',
                 version='0.0.1',
@@ -27,6 +30,19 @@ plugin = Plugin(name='samtools',
 
 
 
+plugin.methods.register_function(
+    function=bwa_build,
+    inputs={'sequences': FeatureData[Sequence]},
+    parameters={},
+    outputs=[('database', BWAIndex)],
+    input_descriptions={
+        'sequences': 'Reference sequences used to build bwa index.'},
+    parameter_descriptions={'n_threads': 'Number of threads to launch'},
+    output_descriptions={'database': 'BWA index.'},
+    name='Build bwa index from reference sequences.',
+    description='Build bwa index from reference sequences.',
+    citations=[]
+)
 
 
 plugin.methods.register_function(
