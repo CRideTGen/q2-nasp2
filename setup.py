@@ -9,8 +9,8 @@ setup(
     author='Chase Ridenour',
     author_email='cridenour@tgen.org',
     description='',
-    entrypoints ={
-        'qiime2.plugins': ['q2-readmappers=q2_read_mappers.plugin_setup:plugin']
-                  },
+    entry_points={
+        'qiime2.plugins': ['q2-readmappers=q2_readmappers.plugin_setup:plugin']
+    },
     zip_safe=False,
 )

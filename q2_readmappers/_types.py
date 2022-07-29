@@ -1,12 +1,6 @@
-from qiime2.plugin import SemanticType, model
-from plugin_setup import plugin
-from ._formats import BWAIndexDirFmt
-
-BWAIndex = SemanticType('BWAIndex')
+from qiime2.plugin import SemanticType
 
 
-plugin.register_semantic_types(BWAIndex)
-plugin.register_semantic_type_to_format(BWAIndex, BWAIndexDirFmt)
+BWAIndexTest = SemanticType('BWAIndex')
+Bowtie2IndexTest = SemanticType('Bowtie2IndexTest')
 
-#TODO add citations
-plugin.register_views()
