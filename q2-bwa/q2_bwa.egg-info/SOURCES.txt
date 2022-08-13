@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+q2_bwa/__init__.py
+q2_bwa/plugin_setup.py
+q2_bwa/transformers.py
+q2_bwa.egg-info/PKG-INFO
+q2_bwa.egg-info/SOURCES.txt
+q2_bwa.egg-info/dependency_links.txt
+q2_bwa.egg-info/entry_points.txt
+q2_bwa.egg-info/not-zip-safe
+q2_bwa.egg-info/top_level.txt
+q2_bwa/actions/__init__.py
+q2_bwa/actions/map_reads.py
+q2_bwa/actions/reference_index.py

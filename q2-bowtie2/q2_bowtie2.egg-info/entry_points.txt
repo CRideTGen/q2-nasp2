@@ -1,0 +1,2 @@
+[qiime2.plugins]
+q2-bowtie2 = q2_bowtie2.plugin_setup:plugin

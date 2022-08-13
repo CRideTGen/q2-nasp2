@@ -11,7 +11,3 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-
-from q2_readmappers.actions.reference_index import bwa_build
-
-__all__ = ["bwa_build"]

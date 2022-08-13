@@ -12,11 +12,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+from q2_bwa.actions.reference_index import index
+from q2_bwa.actions.mem import mem_single
 
-
-from qiime2.plugin import Plugin
-
-plugin = Plugin(name='readmappers',
-                version='0.0.1',
-                package='q2_readmappers',
-                website='https://github.com/CRideTGen/q2-readmappers')
+__all__ = ["index", "mem_single"]

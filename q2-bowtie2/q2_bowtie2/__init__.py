@@ -12,11 +12,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-
-
-from qiime2.plugin import Plugin
-
-plugin = Plugin(name='readmappers',
-                version='0.0.1',
-                package='q2_readmappers',
-                website='https://github.com/CRideTGen/q2-readmappers')
+# from q2_bowtie2.actions.reference_index import bwa_build, bowtie2_build
+#
+# __all__ = ["bwa_build", "bowtie2_build"]
