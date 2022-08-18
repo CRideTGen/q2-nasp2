@@ -15,7 +15,8 @@ from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequenc
 from q2_types.sample_data import SampleData
 from qiime2.plugin import Plugin
 
-from q2_nasp2_types.types import SAMFile
+from q2_nasp2_types.types import SAMFile, XMLFile, YAMLFile, Config, NASP2MatrixFile
+from q2_nasp2.actions.nasp2 import nasp2
 from q2_nasp2.actions.pipelines.map_reads import bwa
 
 plugin = Plugin(name='nasp2',
@@ -32,6 +33,20 @@ plugin.pipelines.register_function(
         'sequences': '.'},
     parameter_descriptions={},
     output_descriptions={'output_sams': ''},
+    name='',
+    description=''
+
+)
+
+plugin.pipelines.register_function(
+    function=nasp2,
+    inputs={'config_file': Config[YAMLFile | XMLFile]},
+    parameters={},
+    outputs=[('matrix', NASP2MatrixFile)],
+    input_descriptions={
+        'config_file': '.'},
+    parameter_descriptions={},
+    output_descriptions={'matrix': ''},
     name='',
     description=''
 

@@ -39,11 +39,26 @@ class VCFFileDirFmt(model.DirectoryFormat):
     sam_files = model.FileCollection(r'*.sam', format=VCFFileFormat)
 
 
-class NASPMatrixFileFormat(model.TextFileFormat):
+class NASP2MatrixFileFormat(model.TextFileFormat):
     def _validate_(self, level):
         pass
 
-class NASPMatrixFileDirFmt(model.DirectoryFormat):
-    sam_files = model.FileCollection(r'*.sam', format=NASPMatrixFileFormat)
+class NASP2MatrixFileDirFmt(model.DirectoryFormat):
+    sam_files = model.FileCollection(r'*.sam', format=NASP2MatrixFileFormat)
 
+
+
+class YAMLFileFormat(model.TextFileFormat):
+    def _validate_(self, level):
+        pass
+
+class YAMLFileDirFmt(model.DirectoryFormat):
+    config_file = model.File(r'*.yaml', format=YAMLFileFormat)
+
+class XMLFileFormat(model.TextFileFormat):
+    def _validate_(self, level):
+        pass
+
+class XMLFileDirFmt(model.DirectoryFormat):
+    config_file = model.File(r'*.xml', format=XMLFileFormat)
 
