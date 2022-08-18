@@ -16,6 +16,8 @@
 from q2_nasp2_types.formats import SAMFileFormat
 from q2_nasp2_types.types import BWAIndex, SAMFile
 from q2_types.feature_data import FeatureData, Sequence, PairedEndSequence
+from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequencesWithQuality
+from q2_types.sample_data import SampleData
 from qiime2.plugin import Plugin
 
 from q2_bwa.actions.mem import mem_single, mem_paired
@@ -42,7 +44,7 @@ plugin.methods.register_function(
 
 plugin.methods.register_function(
     function=mem_single,
-    inputs={'sequences': FeatureData[Sequence]},
+    inputs={'sequences': SampleData[SequencesWithQuality]},
     parameters={},
     outputs=[('output_sams', SAMFile)],
     input_descriptions={
@@ -55,7 +57,7 @@ plugin.methods.register_function(
 
 plugin.methods.register_function(
     function=mem_paired,
-    inputs={'sequences': FeatureData[Sequence]},
+    inputs={'sequences': SampleData[PairedEndSequencesWithQuality]},
     parameters={},
     outputs=[('output_sams', SAMFileFormat)],
     input_descriptions={

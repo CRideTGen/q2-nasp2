@@ -1,0 +1,2 @@
+[qiime2.plugins]
+q2-nasp2-types = q2_nasp2_types.plugin_setup:plugin
