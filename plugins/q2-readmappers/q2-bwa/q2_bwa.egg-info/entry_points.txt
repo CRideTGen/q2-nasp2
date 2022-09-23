@@ -1,2 +1,0 @@
-[qiime2.plugins]
-q2-bwa = q2_bwa.plugin_setup:plugin
